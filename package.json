@@ -1,0 +1,16 @@
+{
+  "name": "raspberry-sqs-consumer",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:lucasltv/raspberry-sqs-consumer.git",
+  "author": "Lucas Vieira <lucasltv@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js",
+    "start:pm2": "./node_modules/.bin/pm2 start process.yml"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.839.0",
+    "sqs-consumer": "^5.5.0"
+  }
+}

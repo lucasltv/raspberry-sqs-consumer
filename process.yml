@@ -1,0 +1,7 @@
+apps:
+  - script: index.js
+    name: "raspberry-sqs-consumer"
+    max_restarts: 100
+    restart_delay: 5000
+    env:
+      NODE_ENV: development
