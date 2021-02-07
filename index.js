@@ -1,8 +1,9 @@
 require("dotenv").config();
 const { Consumer } = require("sqs-consumer");
 const { SQS } = require("aws-sdk");
+const handleSqsCommand = require("./services/raspberryService");
 
-const { AWS_QUEUE_URL, AWS_SECRET_KEY, AWS_ACCESS_KEY } = process.env;
+const { NODE_ENV, AWS_QUEUE_URL, AWS_SECRET_KEY, AWS_ACCESS_KEY } = process.env;
 
 const queueConsumer = Consumer.create({
   queueUrl: AWS_QUEUE_URL,
@@ -20,11 +21,11 @@ queueConsumer.start();
 
 async function handleMessage(sqsMessage) {
   try {
-    // const message = JSON.parse(sqsMessage.Body)
-    console.log("LOG ~ handleMessage ~ sqsMessage.Body", sqsMessage.Body);
+    const message = JSON.parse(sqsMessage.Body);
+    handleSqsCommand(message);
   } catch (err) {
     console.log("LOG ~ handleMessage ~ err", err);
   }
 }
 
-console.log(`Worker started at ${new Date()}`);
+console.log(`Worker started at ${new Date()}\nStage: ${NODE_ENV}`);
