@@ -24,4 +24,4 @@ setTimeout(() => {
   endBlink();
   console.log("Blink finished!");
   process.exit(0);
-}, 5000); //stop blinking after 5 seconds
+}, 10e3); //stop blinking after 10 seconds
