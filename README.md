@@ -17,5 +17,5 @@ Just create a .env (see .env.example) at root dir.
 
 ### With pm2 (optional)
 
-```yarn add pm2```
-```yarn start:pm2```
+- ```yarn add pm2```
+- ```yarn start:pm2```
