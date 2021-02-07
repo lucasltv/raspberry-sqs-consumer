@@ -1,7 +1,7 @@
 require("dotenv").config();
 const { Consumer } = require("sqs-consumer");
 const { SQS } = require("aws-sdk");
-const handleSqsCommand = require("./services/raspberryService");
+const { handleSqsCommand } = require("./services/raspberryService");
 
 const { NODE_ENV, AWS_QUEUE_URL, AWS_SECRET_KEY, AWS_ACCESS_KEY } = process.env;
 
