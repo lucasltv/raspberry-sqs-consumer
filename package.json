@@ -6,6 +6,7 @@
   "author": "Lucas Vieira <lucasltv@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "dev": "nodemon index.js",
     "start": "node index.js",
     "start:pm2": "node_modules/.bin/pm2 start process.yml",
     "pm2": "node_modules/.bin/pm2",
@@ -17,5 +18,8 @@
     "dotenv": "^8.2.0",
     "pm2": "^4.5.4",
     "sqs-consumer": "^5.5.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
   }
 }
