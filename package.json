@@ -11,14 +11,16 @@
     "start:pm2": "node_modules/.bin/pm2 start process.yml",
     "pm2": "node_modules/.bin/pm2",
     "logs": "yarn pm2 logs --lines 1000",
-    "logs:clear": "yarn pm2 flush"
+    "logs:clear": "yarn pm2 flush",
+    "blink": "node blinkTest.js"
   },
   "dependencies": {
     "aws-sdk": "^2.839.0",
+    "cross-env": "^7.0.3",
     "dotenv": "^8.2.0",
+    "onoff": "^6.0.1",
     "pm2": "^4.5.4",
-    "sqs-consumer": "^5.5.0",
-    "cross-env": "^7.0.3"
+    "sqs-consumer": "^5.5.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.7"
