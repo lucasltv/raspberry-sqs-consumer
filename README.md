@@ -32,3 +32,7 @@ List process example:
 ### Clear pm2 logs
 ```yarn pm2 logs:clear```
 
+
+
+
+Enjoy =)
