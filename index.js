@@ -22,8 +22,7 @@ queueConsumer.start();
 
 async function handleMessage(sqsMessage) {
   try {
-    const message = JSON.parse(sqsMessage.Body);
-    handleSqsCommand(message);
+    handleSqsCommand(sqsMessage.Body);
   } catch (err) {
     logger.error(err);
   }

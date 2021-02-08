@@ -1,8 +1,5 @@
 const { createLogger, format, transports } = require("winston");
 require("winston-daily-rotate-file");
-
-const { NODE_ENV } = process.env;
-const isDev = NODE_ENV === "development";
 const transportsArr = [];
 
 const fileTransport = new transports.DailyRotateFile({
@@ -21,22 +18,12 @@ const consoleTransport = new transports.Console({
 });
 transportsArr.push(consoleTransport);
 
-const formatsToApply = isDev
-  ? format.combine(
-      format.colorize(), //Only for dev
-      format.errors({ stack: true }),
-      format.metadata(),
-      format.timestamp(),
-      format.json()
-    )
-  : format.combine(
-      format.errors({ stack: true }),
-      format.metadata(),
-      format.timestamp(),
-      format.json()
-    );
-
 exports.logger = createLogger({
-  format: formatsToApply,
+  format: format.combine(
+    format.errors({ stack: true }),
+    format.metadata(),
+    format.timestamp(),
+    format.json()
+  ),
   transports: transportsArr,
 });
