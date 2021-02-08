@@ -33,7 +33,7 @@ List process example:
 ```yarn pm2 logs:clear```
 
 ## TODO
-[ ] - winston logger with file rotation transporter
+[X] - winston logger with file rotation transporter
 
 
 Enjoy =)
